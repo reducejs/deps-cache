@@ -1,9 +1,11 @@
-var test = require('tape')
-var Handle = require('..')
+'use strict'
+
+const test = require('tap').test
+const Handle = require('..')
 
 test('deep', function(t) {
   var cache = {}
-  var h = Handle(cache)
+  var h = new Handle(cache)
 
   h.add('a', 'c')
   h.add('b', ['c', 'd'])
@@ -29,7 +31,7 @@ test('deep', function(t) {
 
 test('shallow', function(t) {
   var cache = {}
-  var h = Handle(cache)
+  var h = new Handle(cache)
 
   h.add('a', 'c')
   h.add('b', ['c', 'd'])

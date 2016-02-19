@@ -1,4 +1,8 @@
 # deps-cache
+[![version](https://img.shields.io/npm/v/deps-cache.svg)](https://www.npmjs.org/package/deps-cache)
+[![status](https://travis-ci.org/reducejs/deps-cache.svg?branch=master)](https://travis-ci.org/reducejs/deps-cache)
+![node](https://img.shields.io/node/v/deps-cache.svg)
+
 Invalidate caches with dependency graph
 
 ## Example
@@ -7,7 +11,7 @@ Invalidate caches with dependency graph
 var Handle = require('deps-cache')
 
 var cache = {}
-var h = Handle(cache)
+var h = new Handle(cache)
 h.add('a', 'c')   // `a` depends on `c`
 h.add('b', ['c', 'd'])  // `b` depends on both `c` and `d`
 

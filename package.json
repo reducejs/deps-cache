@@ -4,11 +4,13 @@
   "description": "Invalidate caches with dependency graph",
   "main": "index.js",
   "scripts": {
-    "test": "gulp"
+    "test": "npm run lint && tap test/*.js",
+    "lint": "eslint *.js 'lib/**/*.js' test/*.js bin/*.js",
+    "coveralls": "COVERALLS_REPO_TOKEN=REPO_TOKEN tap --cov test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zoubin/deps-cache.git"
+    "url": "git+https://github.com/reducejs/deps-cache.git"
   },
   "keywords": [
     "dependency",
@@ -17,20 +19,16 @@
   ],
   "author": "zoubin",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/zoubin/deps-cache/issues"
+  "engines": {
+    "node": ">=4.2.1"
   },
-  "homepage": "https://github.com/zoubin/deps-cache#readme",
+  "bugs": {
+    "url": "https://github.com/reducejs/deps-cache/issues"
+  },
+  "homepage": "https://github.com/reducejs/deps-cache#readme",
   "dependencies": {},
   "devDependencies": {
-    "callback-sequence": "^1.2.1",
-    "del": "^2.0.2",
-    "gulp": "^3.9.0",
-    "gulp-eslint": "^1.0.0",
-    "gulp-istanbul": "^0.10.1",
-    "gulp-tape": "0.0.4",
-    "tap-spec": "^4.1.0",
-    "tape": "^4.2.0",
-    "task-tape": "^1.0.0"
+    "eslint": "^2.1.0",
+    "tap": "^5.0.0"
   }
 }
